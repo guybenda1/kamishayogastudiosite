@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { useAuthStore } from './store/authStore';
 import useCartStore from './store/cartStore';
+import { useSiteImagesStore } from './store/siteImagesStore';
 
 // Components
 import Header from './components/Header';
@@ -57,10 +58,12 @@ const HomePage = () => (
 function App() {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const { initialize, user } = useAuthStore();
+  const fetchSiteImages = useSiteImagesStore((s) => s.fetchAll);
 
   useEffect(() => {
     initialize();
-  }, [initialize]);
+    fetchSiteImages();
+  }, [initialize, fetchSiteImages]);
 
   return (
     <Router>
