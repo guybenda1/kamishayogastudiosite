@@ -102,7 +102,7 @@ const Classes = () => {
                 </p>
 
                 <div className="flex justify-between items-center mb-4 text-sm">
-                  <span className="px-3 py-1 rounded-full font-hebrew-light" style={{ backgroundColor: '#F5E4DF', color: '#6B4C4C' }}>
+                  <span className="px-3 py-1 rounded-full font-hebrew-light" style={{ backgroundColor: '#EFE2CD', color: '#7A5A3A' }}>
                     {classItem.level}
                   </span>
                   <span className="text-sage-600 font-hebrew-light">
@@ -128,7 +128,7 @@ const Classes = () => {
                   <a href="https://wa.me/972505172253?text=היי לימור, אני מעוניין/ת בתרגולים קבוצתיים. אשמח לקבל פרטים נוספים"
                     target="_blank" rel="noopener noreferrer"
                     className="w-full text-center py-3 rounded-lg font-hebrew font-medium mt-auto"
-                    style={{ backgroundColor: '#F5E4DF', color: '#6B4C4C' }}>
+                    style={{ backgroundColor: '#EFE2CD', color: '#7A5A3A' }}>
                     הזמני מקום בתרגול קבוצתי
                   </a>
                 )}
@@ -136,7 +136,7 @@ const Classes = () => {
                   <a href="https://wa.me/972505172253?text=היי לימור, אני מעוניין/ת בתרגול אישי 1:1. אשמח לתאם פגישה"
                     target="_blank" rel="noopener noreferrer"
                     className="w-full text-center py-3 rounded-lg font-hebrew font-medium mt-auto"
-                    style={{ backgroundColor: '#F5E4DF', color: '#6B4C4C' }}>
+                    style={{ backgroundColor: '#EFE2CD', color: '#7A5A3A' }}>
                     תאמי תרגול אישי
                   </a>
                 )}
@@ -144,7 +144,7 @@ const Classes = () => {
                   <a href="https://wa.me/972505172253?text=היי לימור, אני מעוניין/ת בתהליך ליווי גוף-נפש. אשמח לשמוע פרטים נוספים"
                     target="_blank" rel="noopener noreferrer"
                     className="w-full text-center py-3 rounded-lg font-hebrew font-medium mt-auto"
-                    style={{ backgroundColor: '#F5E4DF', color: '#6B4C4C' }}>
+                    style={{ backgroundColor: '#EFE2CD', color: '#7A5A3A' }}>
                     התחילי תהליך ליווי
                   </a>
                 )}
@@ -152,7 +152,7 @@ const Classes = () => {
                   <a href="https://wa.me/972505172253?text=היי לימור, אני מעוניין/ת במפגשי העמקה וסדנאות. אשמח לקבל עדכונים על הפעילויות הקרובות"
                     target="_blank" rel="noopener noreferrer"
                     className="w-full text-center py-3 rounded-lg font-hebrew font-medium mt-auto"
-                    style={{ backgroundColor: '#F5E4DF', color: '#6B4C4C' }}>
+                    style={{ backgroundColor: '#EFE2CD', color: '#7A5A3A' }}>
                     הירשמי לעדכונים
                   </a>
                 )}

@@ -5,23 +5,23 @@ import { useAuthStore } from './store/authStore';
 import useCartStore from './store/cartStore';
 import { useSiteImagesStore } from './store/siteImagesStore';
 
-// Components
+// Components - homepage sections bundled together to prevent layout jumping
 import Header from './components/Header';
 import Footer from './components/Footer';
 import AuthModal from './components/Auth/AuthModal';
 import CartSidebar from './components/Cart/CartSidebar';
 import Hero from './components/Hero';
+import About from './components/About';
+import Studio from './components/Studio';
+import Gallery from './components/Gallery';
+import Classes from './components/Classes';
+import Retreats from './components/Retreats';
+import Jewelry from './components/Jewelry';
+import Products from './components/Products';
+import Testimonials from './components/Testimonials';
+import Contact from './components/Contact';
 
-// Lazy load below-the-fold components for better performance
-const About = lazy(() => import('./components/About'));
-const Studio = lazy(() => import('./components/Studio'));
-const Gallery = lazy(() => import('./components/Gallery'));
-const Classes = lazy(() => import('./components/Classes'));
-const Retreats = lazy(() => import('./components/Retreats'));
-const Jewelry = lazy(() => import('./components/Jewelry'));
-const Products = lazy(() => import('./components/Products'));
-const Testimonials = lazy(() => import('./components/Testimonials'));
-const Contact = lazy(() => import('./components/Contact'));
+// Lazy load only route-specific components (not on the home page)
 const StorePage = lazy(() => import('./components/Store/StorePage'));
 const ProductPage = lazy(() => import('./components/Store/ProductPage'));
 const CheckoutPage = lazy(() => import('./components/Checkout/CheckoutPage'));
@@ -41,17 +41,15 @@ const LoadingSpinner = () => (
 const HomePage = () => (
   <>
     <Hero />
-    <Suspense fallback={<LoadingSpinner />}>
-      <About />
-      <Studio />
-      <Gallery />
-      <Classes />
-      <Retreats />
-      <Jewelry />
-      <Products />
-      <Testimonials />
-      <Contact />
-    </Suspense>
+    <About />
+    <Studio />
+    <Gallery />
+    <Classes />
+    <Retreats />
+    <Jewelry />
+    <Products />
+    <Testimonials />
+    <Contact />
   </>
 );
 

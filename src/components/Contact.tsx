@@ -127,12 +127,12 @@ const Contact = () => {
               )}
               <div
                 className="absolute -bottom-6 -left-6 p-6 rounded-2xl shadow-lg"
-                style={{ backgroundColor: '#F5E4DF' }}
+                style={{ backgroundColor: '#EFE2CD' }}
               >
-                <p className="font-hebrew font-bold text-lg" style={{ color: '#6B4C4C' }}>
+                <p className="font-hebrew font-bold text-lg" style={{ color: '#7A5A3A' }}>
                   נשמח לשמוע מכם
                 </p>
-                <p className="font-hebrew-light" style={{ color: '#6B4C4C' }}>
+                <p className="font-hebrew-light" style={{ color: '#7A5A3A' }}>
                   בואו נתחבר
                 </p>
               </div>

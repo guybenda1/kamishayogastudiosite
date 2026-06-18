@@ -20,90 +20,90 @@ body {
   overflow-x: hidden;
 }
 
-/* Scroll animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Scroll animation classes */
+/* Scroll animations - smooth, elegant entrances */
 .scroll-animate {
   opacity: 0;
-  transition: all 0.6s ease-out;
+  will-change: opacity, transform;
+  transition:
+    opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .scroll-animate.animate-in {
   opacity: 1;
+  transform: none;
 }
 
 .scroll-animate.fade-up {
-  transform: translateY(30px);
-}
-
-.scroll-animate.fade-up.animate-in {
-  transform: translateY(0);
+  transform: translate3d(0, 24px, 0);
 }
 
 .scroll-animate.fade-left {
-  transform: translateX(-30px);
-}
-
-.scroll-animate.fade-left.animate-in {
-  transform: translateX(0);
+  transform: translate3d(-24px, 0, 0);
 }
 
 .scroll-animate.fade-right {
-  transform: translateX(30px);
+  transform: translate3d(24px, 0, 0);
 }
 
-.scroll-animate.fade-right.animate-in {
-  transform: translateX(0);
+.scroll-animate.fade-scale {
+  transform: scale(0.96);
 }
 
-/* Stagger animation delays */
-.scroll-animate:nth-child(1) { transition-delay: 0ms; }
-.scroll-animate:nth-child(2) { transition-delay: 100ms; }
-.scroll-animate:nth-child(3) { transition-delay: 200ms; }
-.scroll-animate:nth-child(4) { transition-delay: 300ms; }
-.scroll-animate:nth-child(5) { transition-delay: 400ms; }
-.scroll-animate:nth-child(6) { transition-delay: 500ms; }
+/* Stagger animation delays - longer chain for elegance */
+.scroll-animate:nth-child(1)  { transition-delay: 0ms; }
+.scroll-animate:nth-child(2)  { transition-delay: 80ms; }
+.scroll-animate:nth-child(3)  { transition-delay: 160ms; }
+.scroll-animate:nth-child(4)  { transition-delay: 240ms; }
+.scroll-animate:nth-child(5)  { transition-delay: 320ms; }
+.scroll-animate:nth-child(6)  { transition-delay: 400ms; }
+.scroll-animate:nth-child(7)  { transition-delay: 480ms; }
+.scroll-animate:nth-child(8)  { transition-delay: 560ms; }
+.scroll-animate:nth-child(9)  { transition-delay: 640ms; }
+.scroll-animate:nth-child(10) { transition-delay: 720ms; }
+
+/* Drop will-change once the animation is done to free GPU memory */
+.scroll-animate.animate-in {
+  will-change: auto;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-animate {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* Subtle entrance for hover-lift cards */
+.card-hover {
+  transition:
+    transform 400ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 400ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -16px rgba(53, 61, 53, 0.18);
+}
+
+/* Soft image entrance */
+@keyframes imageReveal {
+  from {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.image-reveal {
+  animation: imageReveal 1100ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
 
 ::-webkit-scrollbar {
   width: 8px;

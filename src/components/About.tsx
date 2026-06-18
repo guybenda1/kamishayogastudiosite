@@ -41,16 +41,16 @@ const About = () => {
                 </button>
               )}
               <div
-  className="absolute -bottom-6 -right-6 p-6 rounded-2xl shadow-lg"
-  style={{ backgroundColor: '#F5E4DF' }}
->
-  <p className="font-hebrew font-bold text-lg" style={{ color: '#6B4C4C' }}>
-    הדרך מתבהרת
-  </p>
-  <p className="font-hebrew-light" style={{ color: '#6B4C4C' }}>
-    להולכים בה
-  </p>
-</div>
+                className="absolute -bottom-6 -right-6 p-6 rounded-2xl shadow-lg"
+                style={{ backgroundColor: '#EFE2CD' }}
+              >
+                <p className="font-hebrew font-bold text-lg" style={{ color: '#7A5A3A' }}>
+                  הדרך מתבהרת
+                </p>
+                <p className="font-hebrew-light" style={{ color: '#7A5A3A' }}>
+                  להולכים בה
+                </p>
+              </div>
             </div>
           </div>
 

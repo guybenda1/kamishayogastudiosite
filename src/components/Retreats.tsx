@@ -65,8 +65,8 @@ const Retreats = () => {
                 <span className="font-hebrew text-sage-700">קבוצות אינטימיות</span>
               </div>
               <div className="flex items-center space-x-3 rtl:space-x-reverse scroll-animate fade-up">
-                <div className="bg-pink-100 p-2 rounded-full">
-                  <Heart className="w-5 h-5 text-pink-600" />
+                <div className="bg-warm-200 p-2 rounded-full">
+                  <Heart className="w-5 h-5 text-warm-700" />
                 </div>
                 <span className="font-hebrew text-sage-700">חוויה הוליסטית</span>
               </div>
