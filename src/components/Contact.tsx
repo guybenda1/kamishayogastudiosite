@@ -53,7 +53,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-sage-800 font-hebrew">אימייל</h4>
-                  <p className="text-sage-600 font-hebrew-light">limorbendavid29@gmail.com</p>
+                  <a href="mailto:marketing@kamishjewelry.com" className="text-sage-600 hover:text-sage-800 font-hebrew-light transition-colors">marketing@kamishjewelry.com</a>
                 </div>
               </div>
 

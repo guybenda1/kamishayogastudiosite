@@ -11,7 +11,7 @@ interface SiteImage {
 }
 
 export const useSiteImage = (section: string, defaultImage: string) => {
-  const [imageUrl, setImageUrl] = useState<string | null>(null);
+  const [imageUrl, setImageUrl] = useState<string>(defaultImage);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -26,15 +26,11 @@ export const useSiteImage = (section: string, defaultImage: string) => {
         .eq('section', section)
         .eq('is_active', true);
 
-      if (error || !data || data.length === 0) {
-        console.log('No image found for section:', section, 'using default');
-        setImageUrl(defaultImage);
-      } else {
+      if (!error && data && data.length > 0 && data[0].image_url !== defaultImage) {
         setImageUrl(data[0].image_url);
       }
     } catch (error) {
       console.error('Error loading image:', error);
-      setImageUrl(defaultImage);
     } finally {
       setLoading(false);
     }

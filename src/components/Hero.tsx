@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { useAuthStore } from '../store/authStore';
 import ImageUploader from './ImageUpload/ImageUploader';
 import { useSiteImage } from '../hooks/useSiteImage';
@@ -7,8 +7,8 @@ import { useOptimizedImage } from '../hooks/useOptimizedImage';
 const Hero = () => {
   const { user } = useAuthStore();
   const isAdmin = user?.email === 'limorbendavid29@gmail.com' || user?.email === 'admin@kamisha.com';
-  const [isEditingImage, setIsEditingImage] = React.useState(false);
-  const imageRef = useRef<HTMLImageElement>(null);
+  const [isEditingImage, setIsEditingImage] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   const { imageUrl, updateImage } = useSiteImage(
     'hero',
@@ -21,40 +21,27 @@ const Hero = () => {
     quality: 75
   });
 
-  useEffect(() => {
-    if (!imageRef.current) return;
-
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const img = entry.target as HTMLImageElement;
-            if (img.dataset.src && !img.src) {
-              img.src = img.dataset.src;
-              observer.unobserve(img);
-            }
-          }
-        });
-      },
-      { rootMargin: '50px' }
-    );
-
-    observer.observe(imageRef.current);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-sage-900">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      style={{
+        background:
+          'linear-gradient(135deg, #353d35 0%, #627462 50%, #80532a 100%)'
+      }}
+    >
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full">
         {imageUrl && (
           <img
-            ref={imageRef}
             src={optimizedUrl || imageUrl}
             alt="Kamisha Yoga Studio Background"
-            className="absolute top-0 left-0 w-full h-full object-cover"
+            onLoad={() => setImageLoaded(true)}
+            className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-700 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
             loading="eager"
             decoding="async"
+            // @ts-expect-error - fetchpriority is a valid HTML attribute
+            fetchpriority="high"
             width="1920"
             height="1080"
           />
@@ -102,7 +89,9 @@ const Hero = () => {
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a
-            href="#classes"
+            href="https://kamishayoga.web.arboxapp.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full sm:w-auto bg-sage-600/90 hover:bg-sage-700 backdrop-blur-sm text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-hebrew font-medium transition-all duration-300 transform hover:scale-105 shadow-2xl border border-white/20 text-center"
           >
             רישום לתרגולים

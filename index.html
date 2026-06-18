@@ -7,10 +7,77 @@
     <meta name="description" content="Kamisha Boutique Yoga Studio - מורה יוגה אשטנגה-ויניאסה מוסמכת. שיעורי יוגה, סדנאות, ריטריטים ותוכנית ליווי גוף-נפש במרחב אינטימי ומעורר השראה." />
     <meta name="keywords" content="יוגה, אשטנגה, ויניאסה, מדיטציה, יוגה טיפולית, מורה יוגה, שלווה, איזון פנימי, ריטריטים, סדנאות, Kamisha" />
     <meta name="author" content="Kamisha" />
+    <meta name="theme-color" content="#353d35" />
+
+    <!-- Preconnect to critical external origins -->
+    <link rel="preconnect" href="https://images.pexels.com" crossorigin />
+    <link rel="preconnect" href="https://eyotdvabnyowlmdqctsg.supabase.co" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Preload hero LCP image -->
+    <link
+      rel="preload"
+      as="image"
+      href="https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg?auto=compress&cs=tinysrgb&w=1920&quality=75&fit=crop"
+      fetchpriority="high"
+    />
+
+    <!-- Non-blocking font load -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Rubik:wght@400;500&family=Dancing+Script:wght@400;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Rubik:wght@400;500&family=Dancing+Script:wght@400;600&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+
     <title>Kamisha - Boutique Yoga Studio</title>
+
+    <style>
+      html, body { margin: 0; padding: 0; background: #353d35; }
+      #root { min-height: 100vh; }
+      .initial-loader {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #353d35 0%, #627462 50%, #80532a 100%);
+        z-index: 9999;
+        transition: opacity 0.5s ease;
+      }
+      .initial-loader.hidden { opacity: 0; pointer-events: none; }
+      .initial-loader__spinner {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: 3px solid rgba(255, 255, 255, 0.25);
+        border-top-color: #fdf7f0;
+        animation: ldspin 0.9s linear infinite;
+      }
+      @keyframes ldspin { to { transform: rotate(360deg); } }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="initial-loader" id="initial-loader">
+        <div class="initial-loader__spinner" aria-label="Loading"></div>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      window.addEventListener('load', function () {
+        var el = document.getElementById('initial-loader');
+        if (el) {
+          el.classList.add('hidden');
+          setTimeout(function () { el.remove(); }, 600);
+        }
+      });
+    </script>
   </body>
 </html>

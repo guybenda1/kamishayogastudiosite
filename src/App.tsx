@@ -9,9 +9,9 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import AuthModal from './components/Auth/AuthModal';
 import CartSidebar from './components/Cart/CartSidebar';
+import Hero from './components/Hero';
 
-// Lazy load components for better performance
-const Hero = lazy(() => import('./components/Hero'));
+// Lazy load below-the-fold components for better performance
 const About = lazy(() => import('./components/About'));
 const Studio = lazy(() => import('./components/Studio'));
 const Gallery = lazy(() => import('./components/Gallery'));
@@ -38,18 +38,20 @@ const LoadingSpinner = () => (
 
 // Home Page Component
 const HomePage = () => (
-  <Suspense fallback={<LoadingSpinner />}>
+  <>
     <Hero />
-    <About />
-    <Studio />
-    <Gallery />
-    <Classes />
-    <Retreats />
-    <Jewelry />
-    <Products />
-    <Testimonials />
-    <Contact />
-  </Suspense>
+    <Suspense fallback={<LoadingSpinner />}>
+      <About />
+      <Studio />
+      <Gallery />
+      <Classes />
+      <Retreats />
+      <Jewelry />
+      <Products />
+      <Testimonials />
+      <Contact />
+    </Suspense>
+  </>
 );
 
 function App() {

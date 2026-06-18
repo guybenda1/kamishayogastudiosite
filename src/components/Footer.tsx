@@ -80,7 +80,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#classes" className="text-white hover:text-sage-100 transition-colors font-hebrew-light">
+                <a href="https://kamishayoga.web.arboxapp.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-sage-100 transition-colors font-hebrew-light">
                   רישום לתרגולים
                 </a>
               </li>
@@ -102,7 +102,7 @@ const Footer = () => {
             <h4 className="text-lg font-bold mb-4 font-hebrew text-white">פרטי התקשרות</h4>
             <div className="space-y-2 text-white font-hebrew-light">
               <p>טלפון: 050-5172253</p>
-              <p>אימייל: limorbendavid29@gmail.com</p>
+              <p>אימייל: <a href="mailto:marketing@kamishjewelry.com" className="hover:text-sage-100 transition-colors">marketing@kamishjewelry.com</a></p>
               <p>הסטודיו: הרותם 20, מעלה אדומים</p>
               <a 
                 href="https://ul.waze.com/ul?place=EhlIYXJvdGVtIDIwLCBNYSdhbGUgQWR1bWltIjASLgoUChIJFQCHSjUpAxURXpg_qcKtlaoQFCoUChIJ2xCvRzUpAxURjnsD0fbre0Y&ll=31.76580320%2C35.30286170&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
@@ -118,7 +118,7 @@ const Footer = () => {
 
         <div className="border-t border-sage-800 mt-8 pt-8 text-center">
           <p className="text-white font-hebrew-light">
-            © 2024 Kamisha Boutique Yoga Studio 
+            © {new Date().getFullYear()} Kamisha Boutique Yoga Studio
           </p>
           <p className="text-white font-hebrew-light">
           כל הזכויות שמורות.

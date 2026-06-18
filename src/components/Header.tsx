@@ -103,7 +103,7 @@ const Header: React.FC<HeaderProps> = ({ onAuthClick }) => {
                   <a href="#gallery" className="text-sage-800 hover:text-sage-900 font-hebrew font-bold transition-all duration-300 hover:border-b-2 hover:border-sage-600 pb-1 border-b-2 border-transparent">
                     גלריה
                   </a>
-                  <a href="#classes" className="text-sage-800 hover:text-sage-900 font-hebrew font-bold transition-all duration-300 hover:border-b-2 hover:border-sage-600 pb-1 border-b-2 border-transparent">
+                  <a href="https://kamishayoga.web.arboxapp.com" target="_blank" rel="noopener noreferrer" className="text-sage-800 hover:text-sage-900 font-hebrew font-bold transition-all duration-300 hover:border-b-2 hover:border-sage-600 pb-1 border-b-2 border-transparent">
                     רישום לתרגולים
                   </a>
                   <a href="#retreats" className="text-sage-800 hover:text-sage-900 font-hebrew font-bold transition-all duration-300 hover:border-b-2 hover:border-sage-600 pb-1 border-b-2 border-transparent">
@@ -210,8 +210,10 @@ const Header: React.FC<HeaderProps> = ({ onAuthClick }) => {
                   >
                     הסטודיו
                   </a>
-                  <a 
-                    href="#classes" 
+                  <a
+                    href="https://kamishayoga.web.arboxapp.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block px-4 py-3 text-sage-700 hover:text-white hover:bg-sage-600 font-hebrew font-medium rounded-xl transition-all duration-300 text-right text-lg"
                     onClick={() => setIsMenuOpen(false)}
                   >
